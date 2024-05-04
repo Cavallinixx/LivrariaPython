@@ -1,15 +1,24 @@
+from MenuLivro import MenuLivro
 class Control:
 
     def __init__(self):
-        self.login = ""
-        self.senha = ""
-        self.usuario = self.login + self.senha
-    def login(self):
+        self.loginUm = ""
+        self.senhaUm = ""
+        self.login2 = "vitor"
+        self.senha2 = "123"
+        self.exer = MenuLivro()
 
-        if(self.login & self.senha != self.usuario ):
-            return f"O login ou senha estão incorretos!"
+
+
+    def validarLogin(self):
+        if((self.loginUm == self.login2) & ( self.senhaUm == self.senha2)):
+          return f"Seja bem vindo!{self.exer.menuLivro()}"
         else:
-            return f"Bem vindo!"
+          return f"Dados incorretos, digite novamente!"
+
+
+
+
 
 
 

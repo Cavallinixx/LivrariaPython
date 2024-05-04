@@ -6,8 +6,17 @@ class Menu:
         self.exer = Control()
 
     def login(self):
-        self.exer.login = input("Informe seu login: ")
-        self.exer.senha = input("Informe sua senha: ")
+        self.exer.loginUm = input("Informe seu login: ")
+        self.exer.senhaUm = input("Informe sua senha: ")
+
+    def cadastro(self):
+        self.exer.login = input("Informe o login: ")
+        self.exer.senha = input("Informe a senha: ")
+        self.exer.login = input("Informe o endereço: ")
+        self.exer.senha = input("Informe o telefone: ")
+        self.exer.login = input("Informe a data de nascimento: ")
+        self.exer.senha = input("Informe o nome: ")
+        print("Cadastro feito com sucesso!")
 
 
     def menuInicio(self):
@@ -15,8 +24,7 @@ class Menu:
                                "\n0. Sair      "    +
                                "\n1. Entrar    "    +
                                "\n2. Cadastrar "    +
-                               "\nEscolha uma das opções acima:"))
-
+                               "\nEscolha uma das opções acima: "))
 
     def operacao(self):
         while(self.opcao != 0):
@@ -25,9 +33,12 @@ class Menu:
                 print("Obrigado!")
             elif(self.opcao == 1):
                 self.login()
-                print(self.exer.login())
+                print(self.exer.validarLogin())
             elif (self.opcao == 2):
-                self.coletar()
-                print(self.exer.cadastro())
+                self.cadastro()
+
             else:
                 print("Código escolhido não é valido!")
+
+
+
