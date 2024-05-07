@@ -1,13 +1,8 @@
-from ControlLivro import ControlLivro
-from Compra import Compra
-
+from Reserva import Reserva
 class MenuLivro:
-
     def __init__(self):
         self.opcao = -1
-        self.exer = ControlLivro()
-        self.exer = Compra()
-
+        self.exer = Reserva()
 
     def menuLivro(self):
         self.opcao = int(input("-----Menu-----\n\n" +
@@ -16,26 +11,24 @@ class MenuLivro:
                                "\n2. LeBron  -                    R$78,90" +
                                "\n3. Elon Musk -                  R$77,50" +
                                "\n4. Messi: O Gênio Completo -    R$55,90" +
+                               "\n5. Realizar Reserva " +
                                "\nEscolha uma das opções acima: "))
 
+    def pagamento(self):
+        if self.opcao == 0:
+            print("Obrigado!")
+        elif self.opcao == 1:
+            return "Você escolheu o livro: Cabeça Fria Coração Quente, R$68,90"
+        elif self.opcao == 2:
+            return "Você escolheu o livro: LeBron, R$78,90"
+        elif self.opcao == 3:
+            return "Você escolheu o livro: Elon Musk, R$77,50"
+        elif self.opcao == 4:
+            return "Você escolheu o livro: Messi: O Gênio Completo, R$55,90"
+        elif self.opcao == 5:
+            return f"{self.exer.menuReserva()}"
 
     def operacao(self):
-        while (self.opcao != 0):
-            self.menuLivro()
-            if (self.opcao == 0):
-                print("Obrigado!")
-            elif (self.opcao == 1):
-                self.exer.pagamento()
-
-            elif (self.opcao == 2):
-                self.exer.pagamento()
-
-            elif (self.opcao == 3):
-                self.exer.pagamento()
-
-            elif (self.opcao == 4):
-                self.exer.pagamento()
-
-            else:
-                print("Código escolhido não é valido!")
-
+        self.menuLivro()
+        resultado = self.pagamento()
+        return resultado
